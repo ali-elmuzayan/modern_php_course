@@ -6,8 +6,8 @@
  * action => to submit the value into the same file or other file
  * method => to determine the method of the form
  *
- * you need to include
- *  - submit button to submit to transfer the value to the server
+ * you need to have in your form:
+ *  - a submit button to submit to transfer the value to the server
  *      => type = submit
  */
 

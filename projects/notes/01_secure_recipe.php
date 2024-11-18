@@ -27,5 +27,5 @@
 // important:
 /*
  *  - you should always check the input that user added also handle it
- *  - you should always check the output you print in tha page ans sanitize it
+ *  - you should always check the output you print in tha page and sanitize it
  */

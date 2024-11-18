@@ -3,7 +3,7 @@
 // XSS
 /*
  * why we need prevent cross site scripting
- *  - cause malicious user could add data tht destroy or hurt  our project
+ *  - cause malicious user could add code tht destroy or hurt  our project
  *      so we need to
  *  - try this to know what is going to happen
  *      => "/><script>alert('hi')</script>
@@ -23,7 +23,7 @@
  *      => always use it even if it not necessary
  */
 /*
- * because this always forget
+ * because this always forgotten
  * we are going to create function that handle this
  * like
  */

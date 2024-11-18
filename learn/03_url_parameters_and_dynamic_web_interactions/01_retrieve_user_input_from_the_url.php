@@ -26,7 +26,7 @@ echo $text;
  *  => localhost/index.php?books[]=harry Potter&books[]=Romio julie
  * ignore "&" if we want to add it as value
  *  => http_build_query()
- *  => or you %26
+ *  => or use %26
  *
  * always use http_build_query
  *      - works with all value

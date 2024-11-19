@@ -32,7 +32,7 @@ if (isset($_GET['name'])) {
 ?>
     <br>
     <a href="02_type_casting_and_silence_warning.php?<?php
-    echo http_build_query(['name' => ['ali', 'ahmed']]) ?>">Clink on link</a>
+    echo http_build_query(['name' => ['ali', 'ahmed']]) ?>">click on link</a>
 
 
 <?php

@@ -3,7 +3,7 @@
 /*
  *  - strlen
  *  - substr(value, offset, length)
- *      => length by default the to the end
+ *      => length by default to the end
  *
  *  - str_starts_with
  *      => to check if it starts with that or not

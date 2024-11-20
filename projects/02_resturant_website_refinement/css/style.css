@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    padding-top: 12vh;
+}
+
+.header .nav-box {
+    margin-top: 25px;
+}
+
+.header .nav-box a {
+    display: inline-block;
+    text-decoration: none;
+    border: solid 1px #272626;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    background-color: #bbbbbb;
+    color: #272626;
+}
+
+.header .nav-box .active {
+    display: inline-block;
+    background-color: #534040;
+    color: white !important;
+}
+
+a.active:hover {
+    color: white !important;
+    background-color: black;
+    border: 1px solid black;
+}

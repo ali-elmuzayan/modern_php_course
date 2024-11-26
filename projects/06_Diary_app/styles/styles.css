@@ -1,0 +1,374 @@
+/*
+    Colors: #113343,
+    this design => mobile first;
+*/
+
+
+/*  General Style  */
+:root {
+    --main-color: #113343;
+    --gray: #F3F4F5;
+    --dark-gray: rgb(200, 200, 200);
+    --darker-gray: rgb(100, 100, 100);
+    --orange: #f35A39;
+    --dark-orange: #d95032;
+    --dark-green: #328677;
+    --green: #71b68a;
+    --light-green: #8ed8a9;
+    --white: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+    "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/*  End General Style*/
+
+
+/*  start nav style  */
+.nav {
+    background-color: var(--main-color);
+    height: 4rem;
+}
+
+.nav .nav-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+.nav-brand:hover .nav-brand-img {
+    color: var(--light-green);
+}
+
+
+.nav-brand-img {
+    width: 3rem;
+    height: 4rem;
+    vertical-align: bottom;
+    color: var(--green);
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: var(--orange);
+    text-decoration: none;
+    color: var(--white);
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    /*text-transform: uppercase;*/
+    line-height: 2.5rem;
+}
+
+.btn:hover {
+    background-color: var(--dark-orange);
+}
+
+.btn .btn-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    top: 0.4rem;
+    margin-right: 0.5rem;
+}
+
+/*  End nav  */
+
+/* main content*/
+
+.main {
+    padding-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.main::before,
+.main::after {
+    content: "";
+    display: block;
+    position: absolute; /* without this the other elements will overlap the style */
+    top: -1rem;
+    bottom: -1rem;
+    width: 10rem;
+    background-image: url("../images/bg-lines.svg");
+    background-position: right center;
+    background-size: cover;
+    opacity: .1;
+    z-index: -1;
+}
+
+
+.main::after {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+main .main-heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    color: var(--main-color);
+    font-size: 3rem;
+    letter-spacing: 0.25em;
+}
+
+/* Start card style */
+.card {
+    background-color: var(--gray);
+    border-radius: 1rem;
+    border: 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 50%);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--main-color);
+}
+
+
+.card-img {
+    display: block;
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .card-img {
+        width: 15rem;
+        height: 2rem;
+        min-height: 100%;
+        box-shadow: 0.25rem 0 0.5rem rgba(0, 0, 0, 0.1);
+    }
+}
+
+.card-desc-box {
+    padding: 1rem 2rem 1.5rem 1rem;
+}
+
+.card-desc-time {
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: bold;
+    padding: 0.5rem 0 1rem 0;
+
+}
+
+
+.card-heading {
+    font-size: 1.75rem;
+}
+
+.card-heading::after {
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 0.125rem;
+    background-color: var(--green);
+    margin: 1rem 0;
+}
+
+.card-text {
+    line-height: 1.5rem;
+}
+
+
+/* End card style */
+
+/* Start Pagination */
+.pagination {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+
+}
+
+.pagination-link {
+    display: block;
+    background-color: var(--white);
+    color: var(--main-color);
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.7rem;
+    width: 2rem;
+    height: 2rem;
+    border: 0.125rem solid var(--dark-gray);
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.pagination-link:hover {
+    color: var(--white);
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+}
+
+.pagination-li-active {
+    /*  we set it at end of pagination because it will override the previous style */
+    border-color: var(--dark-green);
+    color: var(--dark-green);
+}
+
+/* End Pagination */
+
+
+/* End Main content  */
+
+/* start Form */
+.form-group {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.form-label, .form-control {
+    display: block;
+    color: var(--main-color);
+    background-color: var(--dark-gray);
+    border: solid 0.125rem var(--darker-gray);
+    padding: 0.5rem 1rem;
+}
+
+.form-label {
+    flex: 0 0 5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-right-width: 0;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.form-control {
+    flex: 1 0 10rem;
+    border-left-width: 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.form-control {
+
+}
+
+form .btn {
+    border: 0;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* End Form */
+
+
+/* Start Footer */
+.footer {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+.footer::after {
+    content: "";
+    display: block;
+    width: 7.5rem;
+    height: 0.125rem;
+    background-color: var(--white);
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    opacity: 0.5;
+
+}
+
+.footer-heading {
+    margin-bottom: 1rem;
+}
+
+
+.footer-text {
+    color: var(--green);
+    max-width: 30rem;
+    line-height: 1.5;
+}
+
+.footer-text:hover .copyright-text {
+    color: var(--light-green);
+}
+
+/* End Footer */
+
+/* start media */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .card {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/*  End Media*/
+
+/* line between heading and description */
+/*.card-line {*/
+/*    display: inline-block;*/
+/*    background-color: var(--green);*/
+/*    width: 30%;*/
+/*    padding: 1px;*/
+/*}*/

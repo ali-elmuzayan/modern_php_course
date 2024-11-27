@@ -138,6 +138,9 @@
  *  - if you add an item and give it big height for example of width and this make
  *    the page look bigger how to solve this without change the dimension
  *      => by just making the parent (overflow:hidden);
+ *
+ * remove additional whitespace
+ *  - shift + tap
  */
 
 

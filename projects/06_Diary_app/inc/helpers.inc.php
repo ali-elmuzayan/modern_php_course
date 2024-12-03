@@ -85,7 +85,7 @@ function resizeImage($maxDim, $image)
     $imageSize = getimagesize($image);
 
     // to avoid invalid image check if the size is not empty
-    if(!empty($imageSize)) {
+    if (!empty($imageSize)) {
 
         // extract the original width and height from the resource image
         [$width, $height] = $imageSize;
@@ -122,10 +122,3 @@ function removeImg(string $imagePath): bool
     return false;
 }
 
-
-// image extension
-function getImageExtention(string $imageName) {
-    $parts = explode('.', $imageName);
-    $lastItem = count($parts) - 1;
-    return $parts[$lastItem];
-}

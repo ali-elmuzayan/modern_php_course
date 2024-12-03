@@ -30,7 +30,7 @@
  *
  * readfile() => to open the image
  *  - to open the file with php only without needing to html
- *  - by it you can scale the image and decrease the resolution
+ *  - by it, you can scale the image and decrease the resolution
  *
  *
  * dynamic serve css with php
@@ -55,7 +55,7 @@
  *
  * note 2:
  *  - if you want to browser to provide us with information, how much
- *    percentage of thins file is already downloaded;
+ *    percentage of things file is already downloaded;
  *
  */
 

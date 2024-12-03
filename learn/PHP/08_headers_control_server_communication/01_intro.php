@@ -5,9 +5,11 @@
 /*
  * We will first have a look the $_SERVER array
  * after that, we'll see how headers are used in PHP
- *      - Browser => Server
- *      - Server => Browser
+ *      - Browser = to> Server
+ *      - Server  = to> Browser
+ *
  * This will then allow us to develop new use cases:
+ * --------------------------------------------------
  *  - we will program a .php file that can tell us if the user is using
  *    the firefox browser
  *  - We will see how we can automatically redirect a visitor to a different
@@ -20,7 +22,7 @@
 
 // $_SERVER[];
 /*
- *  - 'PATH_INFO'       => The path
+
  *  - 'PHP_SELF'        => the full path
  *  - 'REQUEST_URI'     => the full path with queries (parameters)
  *  - 'REQUEST_METHOD'  => the method of the request
@@ -29,3 +31,16 @@
  *  - 'HTTP_USER_AGENT' => the browser info
  *  - 'SERVER_SOFTWARE' => the server software
  */
+echo '<pre>';
+// return array of filename and file extension, basename
+var_dump(pathinfo($_SERVER['PHP_SELF']));
+// to return the dirname
+var_dump(pathinfo($_SERVER['PHP_SELF'], PATHINFO_DIRNAME));
+
+// to return the filename
+var_dump(pathinfo($_SERVER['PHP_SELF'], PATHINFO_EXTENSION));
+// to return the filename without the extension
+var_dump(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME));
+// to return the filename
+var_dump(basename($_SERVER['PHP_SELF']));
+

@@ -1,0 +1,9 @@
+:root {
+    --accent: #0d47a1;
+}
+
+a.active,
+a.active:visited {
+    border: 0.125rem solid var(--accent);
+    color: var(--accent);
+}

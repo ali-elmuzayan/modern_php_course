@@ -4,16 +4,20 @@
  * Regular expressions help you to evaluate the contents of strings
  * Or to find parts within a string
  *
- * Note:
+ * PHP regex functions:
  *  - PHP offers several functions to work with regular expressions
- *  - Thr most common ones:
+ *  - The most common ones:
  *      - preg_match: With this we can check if a string matches a regular
  *        expression
+ *      - preg_match_all:
  *      - preg_replace: like str_replace - but it uses a regular expression
  *
  * What is the problem that regular expression solve:
  *  - check emails
+ *  - check phones number
  *  - check passwords
+ *  - replace content or chars
+ *  - locking for multiple files using glob(*);
  */
 
 

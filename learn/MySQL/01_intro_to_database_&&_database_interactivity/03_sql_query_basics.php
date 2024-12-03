@@ -1,7 +1,7 @@
 <?php
 
-$pdo = new PDO('mysql:host=localhost;dbname=notes_db', 'root', '',
-    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$pdo = new PDO('mysql:host=localhost;dbname=notes_db', 'root'
+    , '', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 // SQL query Basics: Utilize the ORDER BY clause
 //      and SELECT specific columns
@@ -18,7 +18,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=notes_db', 'root', '',
  *
  * best practice:
  *      - use backticks
- *      - keep the key word of sql in uppercase
+ *      - keep the keyword of SQL in uppercase
  *
  */
 
@@ -35,14 +35,16 @@ echo '</pre>';
 /*
  * Where
  *  - use it for filter
- *  - SELECT * FROM `notes` WHERE `title` = 'challenges' ORDER BY `title` ASC;
+ *  - SELECT * FROM `notes` WHERE `title` = 'challenges' ORDER BY `title`
+ *    ASC;
  *  - WHERE should come before order
  *      first filter then order => select, filter then order
  *
  * OR, AND
- *  - SELECT * FROM `` WHERE `` = 1 OR `` = 7 *  - now you can get this 2 entries
- *  - use it to say if one of this condition is true with and that mena the
- *    both conditions should be true;
+ *  - SELECT * FROM `` WHERE `` = 1 OR `` = 7 *  - now you can get
+ *    this 2 entries
+ *  - use it to say if one of this condition is true with and that
+ *    mean the both conditions should be true;
  *
  *
  * fetch()

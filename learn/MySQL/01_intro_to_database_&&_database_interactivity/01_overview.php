@@ -33,7 +33,7 @@
 /*
  * import:
  *  - just select the file you want to import
- *  - be ensure they have the same format as you determine
+ *  - be ensured that they have the same format as you determine
  */
 
 // Connecting to DB:
@@ -43,7 +43,8 @@
  *  - The database was then providing the data to php my admin
  *  - We will start writing database queries on our own
  *  - We will now:
- *      - create a table ("notes") through phpmyadmin && Insert data into it
+ *      - create a table ("notes") through phpmyadmin && Insert data
+ *        into it
  *  - After that:
  *      - we will then connect to this database from PHP
  *      - and read the notes into PHP - from the database!

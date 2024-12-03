@@ -18,8 +18,8 @@
  *         cause you to not be able to connect to your database
  *      => host:127.0.0.1
  *        - this mean we are now connecting through a network connection
- *        - this works for mac or linux cause in window mysql doesn't support
- *          sockets, those virtual files.
+ *        - this works for mac or linux cause in window mysql doesn't
+ *          support sockets, those virtual files.
  *
  *      => if you want error to be in silence mode
  *          (which is very bad will confuse you)
@@ -38,8 +38,8 @@
  *
  * $result = $stmt->fetchAll();
  *      => after execute it we can now fetch the result
- *      => with fetchAll you can access the element by index and key because
- *          it will duplicate the data
+ *      => with fetchAll you can access the element by index and key
+ *          because it will duplicate the data
  *      => but if you only interest in the keys use this code
  *        $stmt ->fetchAll(PDO::FETCH_ASSOC);
  *

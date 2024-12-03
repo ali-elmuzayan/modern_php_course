@@ -1,10 +1,11 @@
 <?php
 
-// for xrf
+// to protect the output form xrf
 function html($value)
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
+
 
 // for debugging;
 function dd($value)
@@ -38,6 +39,8 @@ function isActive($currentValue, $checkedKey, $activeClass = 'active')
     return '';
 }
 
+
+// will return the old value from the get
 function old($value)
 {
     if (isset($_GET[$value])) {
@@ -48,6 +51,8 @@ function old($value)
 
 }
 
+
+// to format the data
 function formatDate($date)
 {
     // explode the date values to an array
@@ -77,25 +82,36 @@ function formatValidDate($date)
 // to resize the image and return the new image
 function resizeImage($maxDim, $image)
 {
-    // extract the original width and height from the resource image
-    [$width, $height] = getImagesize($image);
+    $imageSize = getimagesize($image);
 
-    // the factor that will set the right dimensions
-    $scaleFactor = $maxDim / max($width, $height);
+    // to avoid invalid image check if the size is not empty
+    if(!empty($imageSize)) {
 
-    // by the factor set the width and height of the new image
-    $newWidth = (int)($width * $scaleFactor);
-    $newHeight = (int)($height * $scaleFactor);
+        // extract the original width and height from the resource image
+        [$width, $height] = $imageSize;
 
-    // get the source image
-    $img = imagecreatefromjpeg($image);
 
-    // create a copy image
-    $newImg = imagecreatetruecolor($newWidth, $newHeight);
+        // the factor that will set the right dimensions
+        $scaleFactor = $maxDim / max($width, $height);
 
-    imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-    return $newImg;
+        // by the factor set the width and height of the new image
+        $newWidth = (int)($width * $scaleFactor);
+        $newHeight = (int)($height * $scaleFactor);
+
+        // get the source image
+        $img = imagecreatefromjpeg($image);
+
+        if (!empty($img)) {
+            // create a copy image
+            $newImg = imagecreatetruecolor($newWidth, $newHeight);
+
+            imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+            return $newImg;
+        }
+    }
+    return false;
 }
+
 
 // remove image
 function removeImg(string $imagePath): bool
@@ -104,4 +120,12 @@ function removeImg(string $imagePath): bool
         return unlink($imagePath);
     }
     return false;
+}
+
+
+// image extension
+function getImageExtention(string $imageName) {
+    $parts = explode('.', $imageName);
+    $lastItem = count($parts) - 1;
+    return $parts[$lastItem];
 }

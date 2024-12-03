@@ -1,15 +1,15 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=notes_db', 'root', '',
-    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$pdo = new PDO('mysql:host=localhost;dbname=notes_db', 'root'
+    , '', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 // secure parameter handling in PDO:
 // Prevent SQL injection with Bind Methods
 /*
- * SQL injection is a major security risk and you should protect your
- *  project form this
- *   - it is allow attackers to manipulate teh query to access or alter
+ * SQL injection is a major security risk, and you should protect your
+ *  application form them.
+ *   - it is allowed attackers to manipulate the query to access or alter
  *     the database information.
  *
- * Example:
+ * Example of simple protecting:
  *   - if the parameter is numeric id you can type cast it (int)
  *
  * how to prevent it
@@ -45,7 +45,8 @@ var_dump($note);
 $title = 'this title from PHP';
 $description = 'this description from PHP';
 
-$stmt = $pdo->prepare("INSERT INTO `notes` (`title`, `description`) VALUES (:title, :description)");
+$stmt = $pdo->prepare("INSERT INTO `notes` (`title`, `description`) 
+    VALUES (:title, :description)");
 $stmt->bindValue('title', $title);
 $stmt->bindValue('description', $description);
 $stmt->execute();

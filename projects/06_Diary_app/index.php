@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__ . '/inc/bootstrap.php';
 
-$perPage = 6;
+$perPage = 2;
 $page = (int) ($_GET['page'] ?? 1);
 
 $offset = ($page - 1) * $perPage;
@@ -40,9 +40,11 @@ $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php foreach ($entries as $entry): ?>
         <div class="card">
+            <?php if (!empty($entry['image'])): ?>
             <div class="card-img-box">
-                <img src="./images/pexels-canva-studio-3153199.jpg" alt="card image" class="card-img">
+                <img src="uploads/<?= $entry['image'] ?>" alt="card image" class="card-img">
             </div>
+            <?php endif ?>
             <div class="card-desc-box">
                 <span class="card-desc-time"><?= html(formatDate($entry['date']))  ?></span>
                 <h2 class="card-heading"><?= html($entry['title']) ?></h2>

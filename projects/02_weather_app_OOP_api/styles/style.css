@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(75, 75, 75);
+
+}
+
+.app-container {
+    background-color: rgb(71, 174, 234);
+    background-size: cover;
+    background-position: top center;
+    width: 25rem;
+    height: 40rem;
+    margin: calc((100vh - 40rem) / 2) auto 0 auto;
+
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.top-bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.top-bar-date {
+    font-weight: bold;
+}
+
+.weather-info-img {
+    display: block;
+    max-width: 10rem;
+    margin: 1rem auto 0 auto;
+    filter: drop-shadow(0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5));
+    /*if you try to add shadow like this you will se another result
+      because it act with image as it a box*/
+    /*box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5);*/
+}
+
+.weather-info-temperature {
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    font-weight: lighter;
+    font-size: 4.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.weather-info-desc {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    font-weight: lighter;
+    margin-top: -0.25rem;
+    margin-bottom: 0;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    top: 0.4rem;
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+
+}
+

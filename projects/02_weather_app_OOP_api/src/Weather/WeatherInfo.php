@@ -15,7 +15,7 @@ class WeatherInfo
         return round(($this->temperatureK - 273.9) * (9 / 5) + 32);
     }
 
-    function getCelsius()
+    function getCelsius(): float
     {
         return round($this->temperatureK - 273.9);
     }

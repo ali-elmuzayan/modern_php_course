@@ -1,10 +1,10 @@
 <?php
-
-// when not using use operator
+// when not using operator
 /*
  * when you are not in the namespace or class which mean like in index for
  * example
  */
+
 
 // how to handle not found 404
 /*
@@ -12,6 +12,7 @@
  * in the index but create a controller for that and then initialize
  * an instance
  */
+
 
 // all request go to index
 /*
@@ -23,10 +24,12 @@
  *   for the project
  */
 
+
 // when you use OOP
 /*
  * try to ignore the stand alon functions
  */
+
 
 // What awaits you ?
 /*
@@ -51,9 +54,40 @@
  *       fetching a single entry,...)
  */
 
+
+
 // Notes:
 /*
  *
  * - don't use a hyperlink when you want to change on the database
  * - in case you want it to look like a link just style it with css
+ */
+
+
+// authentication system:
+/*
+ * how to safely store the password:
+ * - don't store the password in plain text
+ * - password_hash() function to store the password
+ * - you need to pass , Password_default with password_hash();
+ * - Note: it will take too long time
+ *
+ * to verify the password:
+ * - use password_verify(password, the hashed password)
+ *
+ * hashing;
+ *  - md5(), sha1()
+ *    => those function is not used for hashing password, encrypt password
+ *       is more complex than that
+ *    => it use for check the download
+ */
+
+
+
+// set up the users table
+/*
+ * - id int(11) primary key auto increment
+ * - username varchar(100)
+ * - email varchar(100)
+ * - password varchar(255)
  */

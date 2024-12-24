@@ -2,18 +2,19 @@
 
 namespace App\Repository;
 
+use App\Core\Database;
 use App\Model\PageModel;
 use PDO;
 
 class PagesRepository
 {
-    public function __construct(private PDO $pdo)
+    public function __construct(private Database $pdo)
     {
     }
 
     function get(): array
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM pages");
+        $stmt = $this->pdo->getConnection()->prepare("SELECT * FROM pages");
         $stmt->execute();
         $entries = $stmt->fetchAll(PDO::FETCH_CLASS, PageModel::class);
         return $entries;

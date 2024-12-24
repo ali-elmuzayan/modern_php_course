@@ -16,7 +16,7 @@ class Redirect
     #[NoReturn]
     public static function to(string $url): void
     {
-        header('Location: index.php?route=' . $url);
+        header('Location: ' . $url);
         exit;
     }
 

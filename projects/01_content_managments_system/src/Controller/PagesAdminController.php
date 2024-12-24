@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Frontend\Controller;
+namespace App\Controller;
 
-use App\Support\Redirect;
 use App\Support\Flash;
+use App\Support\Redirect;
 use App\Traits\HelperTrait;
 use JetBrains\PhpStorm\NoReturn;
 

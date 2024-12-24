@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/flash.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/simple.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/admin.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/custom.css" />
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL?>/assets/styles/flash.css" />
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL?>/assets/styles/simple.css" />
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL?>/assets/styles/admin.css" />
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL?>/assets/styles/custom.css" />
     <title>CMS Project</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
 </div>
     <header>
         <h1>
-            <a href="index.php">CMS: Admin</a>
+            <a href="admin/index">CMS: Admin</a>
         </h1>
         <p>An amazing admin area!</p>
         <nav>
@@ -34,6 +35,6 @@
     <footer>
         <p></p>
     </footer>
-    <script src="./assets/js/flash.js"></script>
+    <script src="<?= BASE_URL?>/assets/js/flash.js"></script>
 </body>
 </html>

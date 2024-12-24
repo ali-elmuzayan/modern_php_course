@@ -1,38 +1,42 @@
 <?php
 
+use App\Core\Container;
+use App\Core\Database;
+use App\Core\Dispatcher;
+use App\Core\Router;
+
+require_once __DIR__ . '/config/env.php';
 require_once __DIR__ . '/inc/bootstrap.inc.php';
-require_once __DIR__ . '/bootstrap.php';
 
 
-$route = @(string)($_GET['route'] ?? 'pages');
+// to get the path:
+$path = path();
 
 
-if ($route === 'pages') {
-    $page = @(string)($_GET['page'] ?? 'index');
-    $pagesController = $container->get('pagesController');
-    $pagesController->showPage($page);
-} elseif ($route === 'admin/pages') {
-    $pagesAdminController = $container->get('pagesAdminController');
-    $pagesAdminController->index();
-} elseif ($route === 'admin/pages/create') {
-    $pagesAdminController = $container->get('pagesAdminController');
-    $pagesAdminController->create();
-} elseif ($route === 'admin/pages/store') {
-    $pagesAdminController = $container->get('pagesAdminController');
-    $pagesAdminController->store();
-} elseif ($route === 'admin/pages/delete') {
-    $id = $_GET['id'];
-    $pagesAdminController = $container->get('pagesAdminController');
-    $pagesAdminController->delete($id);
-} elseif ($route === 'admin/pages/edit') {
-    $id = $_GET['id'];
-    $pagesAdminController = $container->get('pagesAdminController');
-    $pagesAdminController->edit($id);
-} elseif ($route === 'admin/pages/update') {
-    $id = (int)($_GET['id'] ?? 0);
-    $pagesAdminController = $container->get('pagesAdminController');
-    $pagesAdminController->update($id);
-} else {
-    $notFoundController = $container->get('notFoundController');
-    $notFoundController->error404();
-}
+$router = new Router();
+
+// pages route
+$router->add('/', ['controller' => 'pagesController', 'action' => 'index']);
+$router->add('/pages', ['controller' => 'pagesController', 'action' => 'index']);
+
+// admin routes:
+$router->add('/admin/pages', ['controller' => 'pagesAdmin', 'action' => 'index']);
+$router->add('/admin/pages/create', ['controller' => 'pagesAdminController', 'action' => 'create']);
+$router->add('/admin/pages/store', ['controller' => 'pagesAdminController', 'action' => 'store']);
+$router->add('/admin/login', ['controller' => 'AuthController', 'action' => 'login']);
+$router->add('/admin/login/store', ['controller' => 'AuthController', 'action' => 'loginStore']);
+
+// dynamic routes
+$router->add('/{controller}/{id:\d+}/{action}');
+$router->add('/{controller}/{action}');
+
+
+$container = Container::getInstance();
+$container->set('App\Core\Database', function () {
+    return new Database(DB_HOST, DB_NAME, DB_USER, DB_PASS);
+
+});
+
+$dispatcher = new Dispatcher($router, $container);
+$dispatcher->handle($path);
+

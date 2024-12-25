@@ -43,6 +43,7 @@
  *      Class::Constant
  */
 
+
 // singleton pattern:
 /*
  * - by using singleton pattern you cannot initialize multiple instance
@@ -82,4 +83,67 @@
  *
  * __unset()
  *  - it will be called when you use unset function
+ */
+
+
+// ArrayAccess & countable: Emulate arrays with interfaces:
+/*
+ * by inherit from the ArrayAccess Interface
+ *  - then you can access the property as you deal with an array
+ *  - you need to add those method
+ *    => offsetExist(mixed $offset)
+ *    => offsetGet(mixed $offset)
+ *    => offsetSet(mixed $offset, mixed $value)
+ *    => offsetUnset(mixed $offset)
+ *
+ *
+ * by inherit from the countable class:
+ *  - then you need the count method
+ *    =>
+ *
+ *
+ *
+ * Note:
+ *  - you can implement multiple interfaces
+ *
+ */
+
+
+// Exception Handling: safeguard function with try and catch mechanism
+/*
+ * instead of returning something you can throw exception
+ * - throw new Exception('message')
+ *
+ * you should capture the exception before throw it so use
+ *  try { // run the code }
+ * if the exception is called then catch and throw:
+ * catch (Exception $e) {echo $e->getMessage()}
+ *
+ * so it will look:
+ * try {
+ *    // run the code
+ * }
+ * catch (Exception $e) {
+ *    // handle exception
+ * }
+ *
+ * note:
+ * - Exception is a php class
+ *
+ * finally block:
+ *  - finally block will execute whenever happen
+ *  - we might use to close an open file or to close connection
+ */
+
+
+// Custom Exception: Craft Precision Error Handling:
+/*
+ * you can create a custom class for a specific exception
+ * - this class should extend from the Exception Class
+ *
+ * Note:
+ *  - you can throw multiple exception one for each case
+ * and depending on the class that passed to the catch it will catch the
+ * exception
+ *
  */

@@ -1,0 +1,23 @@
+/*
+body                    => css selector
+body {background: red;} => rule
+background              => property
+red                     => value;
+background: color;      => decoration
+ */
+body {
+
+}
+
+/*
+More complex selectors:
+ - to be more specific
+
+to combine multiple selector:
+ - add comma between the selector then apply the decoration
+ */
+
+/*
+images
+ - by default the images is in the text flow
+ */

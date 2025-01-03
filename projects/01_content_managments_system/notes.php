@@ -91,3 +91,25 @@
  * - email varchar(100)
  * - password varchar(255)
  */
+
+
+
+// authServices
+/*
+ *
+ */
+
+
+// prevent start session multiple time:
+/*
+ * a notice will generate that the second start session
+ *  - this notice could affect the header and the buffer so we need to
+ *    get throw if it 
+ *
+ * to prevent that
+ * if (session_id() === '') {
+ *      session_start()
+ * }
+ *
+ * but in my case I start the session once in the index.php file
+ */

@@ -16,7 +16,8 @@ class Redirect
     #[NoReturn]
     public static function to(string $url): void
     {
-        header('Location: ' . $url);
+        $url = trim($url, '/');
+        header('Location: '. BASE_URL . $url);
         exit;
     }
 

@@ -16,12 +16,17 @@ class AuthController extends AbstractController
 
     public function login(): void
     {
+        if ($this->authService->isLoggedIn()) {
+            Redirect::to('/admin/pages');
+        }
 
         $this->render('admin/auth/login');
     }
 
     public function loginStore(): void
     {
+
+
         if (!empty($_POST)) {
             $password = $_POST["password"];
             $username = $_POST["username"];

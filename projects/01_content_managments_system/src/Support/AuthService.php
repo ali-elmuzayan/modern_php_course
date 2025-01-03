@@ -44,8 +44,20 @@ class AuthService
 
             return false;
         }
-
-
+        $_SESSION['id'] = $entry['id'];
+        session_regenerate_id();
         return true;
     }
+
+    public function isLoggedIn(): bool {
+        return !empty($_SESSION['id']);
+    }
+
+    public function ensureLoggedIn() {
+        $isLoggedIn = $this->isLoggedIn();
+        if (empty($isLoggedIn)) {
+            redirect::to('/admin/login');
+        }
+    }
+
 }

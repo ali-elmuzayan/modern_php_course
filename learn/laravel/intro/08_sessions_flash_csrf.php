@@ -38,6 +38,7 @@
  * to access the errors in the blade template use @error directive with
  * the name of the error
  *  - @error('email')  @enderror
+ *  - {{ $errors }}
  */
 
 

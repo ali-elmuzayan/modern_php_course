@@ -50,3 +50,28 @@
  *  - old only works with forms that is use the post method not get
  *  - don't use old with sensitive info like password
  */
+
+
+// adding pagination
+/*
+ * - using pagination so you don't need to display all the entities
+ *   you have, which will take to0 much space, and it's pretty hard
+ *   to navigate
+ * - instead we need to use paginate
+ *
+ *
+ * how to do that
+ *  - to show all the entities with paginate
+ *    => $data = TheModel::latest()->paginate(//amount of item per page)
+ *    => in case you don't pass amount of item it will be 15 by default
+ *
+ *  - in the blade
+ *    => {{$data->links()}}
+ *
+ *
+ *
+ * to show it with bootstrap
+ *  - in the appServiceProvider =>
+ *  - Paginator::useBootstrap()
+ *
+ */

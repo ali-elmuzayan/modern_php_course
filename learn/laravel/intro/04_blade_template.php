@@ -103,3 +103,10 @@
  *  - this way is okay when the form is typical in both but a little
  *    change is there
  */
+
+// to add class in a specific condition
+/*
+ * @class
+ *   => @class(['font-bold','line-through' => $task->completed])
+ *   => you can add multiple class not just one class
+ */

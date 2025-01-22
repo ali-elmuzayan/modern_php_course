@@ -24,14 +24,19 @@
 
 // add validation to the request
 /*
- * first create the request
+ * first create the request, and it will contain those methods
  *  - authorize()
  *    => to determine if the user is authorized to make this request
  *    => make it true
- *  - rules
+ *
+ *  - rules()
  *    => to set the validation
- *  - messages
+ *
+ *  - messages()
  *    => to set the messages of the error that shown
+ *    => this method not exist by default you can use it to set a messages
+ *       with different language
+ *
  *
  * to validate the request in the action
  *  => pass the request of type this request

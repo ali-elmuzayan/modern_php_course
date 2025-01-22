@@ -17,4 +17,9 @@ class Task extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function toggleCompleted() {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
 }

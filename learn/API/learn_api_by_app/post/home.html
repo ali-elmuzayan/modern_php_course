@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>post</h1>
+
+<script>
+    // define the API endpoint
+    const apiUrl = "http://modern_php_course.test/projects/procedural_programming/09_learn_api_by_app/post/";
+
+    // define the data
+    const data = {
+        username: "Ali Ahmed",
+        age: 20
+    };
+
+    // send teh data
+    fetch(apiUrl, {
+        method: 'POST', // HTTP Method
+        headers: {
+            'Content-Type': 'application/json', // Inform the server that we are sending JSON
+        },
+        body: JSON.stringify(data) // Convert data object to json string
+    }).then(response => {
+        // Check if the response is ok (status code 200–299)
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); // Parse the JSON from the response
+    })
+        .then(apiData => {
+            console.log("Response from the server:", apiData);
+        })
+        .catch(error => {
+            console.error("Error during the fetch request:", error);
+        });
+
+</script>
+</body>
+</html>
